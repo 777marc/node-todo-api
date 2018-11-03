@@ -26,22 +26,4 @@ app.listen(3000, () => {
   console.log('Server is runnning');
 });
 
-// let newTodo = new Todo({
-//   text: 'vacuum'
-// });
-//
-// newTodo.save().then((doc) => {
-//   console.log('Saved todo!:', doc);
-// }, (err) => {
-//   console.log('error:',err);
-// });
-
-// let newUser = new User({
-//   email: 'marc_mendoza@hotmail.com.com'
-// });
-
-// newUser.save().then((doc) => {
-//   console.log('Saved User!:', doc);
-// }, (err) => {
-//   console.log('error:',err);
-// });
+module.exports = { app };
