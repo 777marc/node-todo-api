@@ -92,21 +92,17 @@ describe('GET /todos/:id', () => {
   });
 
   it('should return a 404 if todo not found', (done) => {
-
     request(app)
       .get('/todos/6bdd8e8dfa99a475e90c0b3a')
       .expect(404)
       .end(done);
-
   });
 
   it('should return a 404 if invalid id', (done) => {
-
     request(app)
       .get('/todos/6bdd8e8dfa99a475e90c0b3a111')
       .expect(404)
       .end(done);
-
   });
 
 });
@@ -136,12 +132,10 @@ describe('DELETE /todos/:id', () => {
   });
 
   it('should return 404 if todo not found', (done) => {
-
     request(app)
       .delete('/todos/6bdd8e8dfa99a475e90c0b3a')
       .expect(404)
       .end(done);
-
   });
   
   it('should return 404 if id is invalid', (done) => {
