@@ -7,6 +7,7 @@ const { ObjectID } = require('mongodb');
 const { mongoose } = require('./db/mongoose');
 const { Todo } = require('./models/todo');
 const { User } = require('./models/user');
+const { Units } = require('./models/units');
 
 const app = express();
 const port = process.env.PORT;
@@ -108,6 +109,22 @@ app.post('/users', (req, res) => {
   }, (err) => {
     res.status(404).send(err);
   });
+
+});
+
+app.post('/unitbulk', (req, res) => {
+  
+  const data = req.body;
+
+  Units.insertMany(data)  
+    .then((result) => {
+            console.log("result ", result);
+            res.status(200).json({'success': 'new documents added!', 'data': result});
+    })
+    .catch(err => {
+            console.error("error ", err);
+            res.status(400).json({err});
+    });
 
 });
 
